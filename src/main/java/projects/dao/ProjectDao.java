@@ -20,7 +20,8 @@ import provided.util.DaoBase;
 
 /**
  * 
- * @author clayr Data access object layer for Projects
+ * @author clayr Data access object layer for Projects. Uses JDBC to perform
+ *         CRUD operations on the tables.
  */
 public class ProjectDao extends DaoBase {
 

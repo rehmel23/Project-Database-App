@@ -19,7 +19,7 @@ import projects.service.ProjectService;
 public class ProjectsApp {
 	private Scanner scanner = new Scanner(System.in);
 	private ProjectService projectService = new ProjectService();
-	private Project curProject = new Project();
+	private Project curProject;
 	// @formatter:off
 	private List<String> operations = List.of(
 			"1) Add a project.",
@@ -122,7 +122,7 @@ public class ProjectsApp {
 		project.setNotes(notes);
 
 		Project dbProject = projectService.addProject(project);
-		System.out.println("You have successfully created projects: " + dbProject);
+		System.out.println("You have successfully created project: " + dbProject);
 	}
 
 	/**
