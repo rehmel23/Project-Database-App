@@ -90,7 +90,7 @@ public class ProjectsApp {
 	 */
 	private void deleteProject() {
 		listProjects();
-		Integer projectId = getIntInput("Enter the ID of the project you want to delete: ");
+		Integer projectId = getIntInput("Enter the ID of the project you want to delete");
 
 		if (Objects.nonNull(projectId)) {
 			projectService.deleteProject(projectId);
