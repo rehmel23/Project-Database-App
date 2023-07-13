@@ -247,7 +247,9 @@ public class ProjectDao extends DaoBase {
 	/**
 	 * 
 	 * @param project
-	 * @return
+	 * @return Runs SQL query using UPDATE. Passes in each parameter input by the
+	 *         user into the SQL script. If everything works correctly, returns TRUE
+	 *         to the ProjectService layer.
 	 */
 	public boolean modifyProjectDetails(Project project) {
 		// @formatter:off
@@ -283,6 +285,13 @@ public class ProjectDao extends DaoBase {
 		}
 	}
 
+	/**
+	 * 
+	 * @param projectId
+	 * @return Runs the SQL query using DELETE. Passes the project ID into the SQL
+	 *         script that was input by the user. If deleted, returns TRUE to the
+	 *         ProjectService layer.
+	 */
 	public boolean deleteProject(Integer projectId) {
 		String sql = "DELETE FROM " + PROJECT_TABLE + " WHERE project_id = ?";
 

@@ -42,12 +42,24 @@ public class ProjectService {
 				() -> new NoSuchElementException("Project with project ID=" + projectId + " does not exist."));
 	}
 
+	/**
+	 * 
+	 * @param project If an integer is passed in by the user that doesn't match a
+	 *                project ID, then throw a DbException with an error message.
+	 *                Otherwise, run the method in the Dao.
+	 */
 	public void modifyProjectDetails(Project project) {
 		if (!projectDao.modifyProjectDetails(project)) {
 			throw new DbException("Project with ID=" + project.getProjectId() + " does not exist.");
 		}
 	}
 
+	/**
+	 * 
+	 * @param projectId If an integer is passed in by the user that doesn't match a
+	 *                  project ID, then throw a DbException with an error message.
+	 *                  Otherwise, run the method in the Dao.
+	 */
 	public void deleteProject(Integer projectId) {
 		if (!projectDao.deleteProject(projectId)) {
 			throw new DbException("Project with ID=" + projectId + " does not exist.");

@@ -82,7 +82,11 @@ public class ProjectsApp {
 	}
 
 	/**
-	 * 
+	 * Lists the projects stored in the database and asks the user for an integer
+	 * input as to what project to delete based on ID. If the user inputs a value,
+	 * it calls deleteProject in ProjectService and gives a confirmation message
+	 * with the deleted project ID. If the provided project ID and the current
+	 * selected project ID match, then the current Project is reset to null.
 	 */
 	private void deleteProject() {
 		listProjects();
@@ -90,9 +94,9 @@ public class ProjectsApp {
 
 		if (Objects.nonNull(projectId)) {
 			projectService.deleteProject(projectId);
-		
+
 			System.out.println("You have deleted project " + projectId);
-			
+
 			if (Objects.nonNull(curProject) && curProject.getProjectId().equals(projectId)) {
 				curProject = null;
 			}
